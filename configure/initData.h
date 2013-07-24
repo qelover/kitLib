@@ -1,7 +1,12 @@
+/*
+  @brief: single instance of CInitFile
+*/
+
+
 #ifndef INIT_DATA_H
 #define INIT_DATA_H
 
-#include "iniFile.h"
+#include "initFile.h"
 
 using namespace std;
 
@@ -9,12 +14,12 @@ using namespace std;
 class InitData
 {
   public:
-		static bool init(const char* iniFileName);
+	static bool init(const char* iniFileName);
 
-		static CIniFile& getIniFile();
-	
-	private:
-		static CIniFile* m_iniFile;
+	static CInitFile& getIniFile();
+
+  private:
+	static CInitFile* m_iniFile;
 };
 
 #endif
