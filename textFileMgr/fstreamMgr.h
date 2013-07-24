@@ -2,7 +2,6 @@
 #define FSTREAM_MANAGER_H
 
 #include <fstream>
-
 #include "hash_map.h"
 
 
