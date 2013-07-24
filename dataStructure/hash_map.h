@@ -1,3 +1,7 @@
+/*
+  @brief: wrapper of unordered_map in C++
+*/
+
 #ifndef HASH_MAP_H
 #define HASH_MAP_H
 
