@@ -1,5 +1,4 @@
 #include <sys/stat.h>
-#include <math.h>
 #include <sstream>
 
 #include "fileManager.h"
