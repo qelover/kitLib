@@ -1,3 +1,9 @@
+/*
+  @brief: maintain a list of fstream*
+          reduce cost caused by frequently file opening and closing
+*/
+
+
 #ifndef FSTREAM_MANAGER_H
 #define FSTREAM_MANAGER_H
 
@@ -10,36 +16,36 @@ using namespace std;
 
 class FStreamMgr
 {
-  public:
-		static FStreamMgr* getInstance();
-		
-		static void Destroy();
+public:
+	static FStreamMgr* getInstance();
+	
+	static void Destroy();
 
-		fstream* getFStream(const string& fileName);
+	fstream* getFStream(const string& fileName);
 
-		void addFStream(const string& fileName, fstream* pFStream);
-		
-		hash_map<string, fstream*>& getAllFStream() {return m_fsHashMap; }
+	void addFStream(const string& fileName, fstream* pFStream);
+	
+	hash_map<string, fstream*>& getAllFStream() {return m_fsHashMap; }
 
-	private:
-		FStreamMgr();
-		
-		~FStreamMgr();
-		
-	private:
-		static hash_map<string, fstream*> m_fsHashMap;
+private:
+	FStreamMgr();
+	
+	~FStreamMgr();
+	
+private:
+	static hash_map<string, fstream*> m_fsHashMap;
 
-		static FStreamMgr* m_cpFStreamMgr;
+	static FStreamMgr* m_cpFStreamMgr;
 
-		class DestroyFStreamMgr
-		{
-			public:
-				~DestroyFStreamMgr()
-				{
-					FStreamMgr::Destroy();
-				}
-		};
-		static DestroyFStreamMgr cDesFStreamMgr;
+	class DestroyFStreamMgr
+	{
+		public:
+			~DestroyFStreamMgr()
+			{
+				FStreamMgr::Destroy();
+			}
+	};
+	static DestroyFStreamMgr cDesFStreamMgr;
 };
 
 #endif
