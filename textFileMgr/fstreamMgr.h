@@ -5,11 +5,11 @@
 
 #include "hash_map.h"
 
+
 using namespace std;
 
 
-namespace MapLocation
-{
+
 class FStreamMgr
 {
   public:
@@ -42,7 +42,6 @@ class FStreamMgr
 				}
 		};
 		static DestroyFStreamMgr cDesFStreamMgr;
-};
 };
 
 #endif
