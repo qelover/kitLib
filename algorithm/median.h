@@ -1,3 +1,6 @@
+/*
+ * @brief: get median value by quick sort style
+ */
 
 template <typename T>
 T median (T a[], int s, int e, const int mid)
